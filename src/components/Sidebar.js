@@ -25,6 +25,7 @@ const drawerWidth = 240;
 
 function Sidebar(props) {
   const { window, data } = props;
+  
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [flag, setFlag] = useState(0);
   const [favs, setFavs] = useState([false, false, false, false, false, false])
