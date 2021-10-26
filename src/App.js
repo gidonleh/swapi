@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Link, Switch, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar'
 import Main from './components/Main'
 import { Dimmer, Loader } from 'semantic-ui-react';
