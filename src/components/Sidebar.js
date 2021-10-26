@@ -27,7 +27,7 @@ function Sidebar(props) {
   const { window, data } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [flag, setFlag] = useState(0);
-  const [favs, setFavs] = useState([false, false, false, true, false, true])
+  const [favs, setFavs] = useState([false, false, false, false, false, false])
 
   const handleDrawerToggle = () => { 
     setMobileOpen(!mobileOpen);
@@ -46,7 +46,7 @@ function Sidebar(props) {
          {data.map( (e,i) => {
              return (
                  <ListItem button onClick={()=>setFlag(i)}>
-                   <ListItemIcon>{favs[i] ? <StarBorderIcon></StarBorderIcon> : <StarIcon></StarIcon>}</ListItemIcon>
+                   <ListItemIcon>{!favs[i] ? <StarBorderIcon></StarBorderIcon> : <StarIcon></StarIcon>}</ListItemIcon>
                      {e.title} <br/>
                      
                  </ListItem>
@@ -140,7 +140,7 @@ function Sidebar(props) {
                 <Typography paragraph width="80%">
                   
                 <Button onClick={()=>{changeFavsFlag(flag)}} variant="contained">
-                  {!favs[flag] ? 'Remove from favorites' : 'Add to favorites'}
+                  {favs[flag] ? 'Remove from favorites' : 'Add to favorites'}
                   
                   
                   </Button>
